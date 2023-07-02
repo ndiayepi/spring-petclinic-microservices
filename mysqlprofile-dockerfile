@@ -1,0 +1,10 @@
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /base/microservice
+EXPOSE 8761
+COPY .mvn/ /base/.mvn
+COPY mvnw  pom.xml /base/
+ENV SERVICE spring-petclinic-vets-service
+COPY {SERVICE}/ ./
+COPY runmysqlprofil.sh ./
+RUN chmod u+x runmysqlprofil.sh 
+ENTRYPOINT ["./runmysqlprofil.sh"]

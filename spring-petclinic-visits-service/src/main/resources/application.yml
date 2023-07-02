@@ -2,7 +2,7 @@ spring:
   application:
     name: visits-service
   config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
+    import: optional:configserver:${CONFIG_SERVER_URL:http://172.50.0.3:8888/}
 
 
 ---
