@@ -1,8 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine
-WORKDIR /base/spring-petclinic-discovery-server
+WORKDIR /base2/spring-petclinic-discovery-server
 EXPOSE 8761
-COPY .mvn/ /base/.mvn
-COPY mvnw  pom.xml /base/
+COPY .mvn/ /base2/.mvn
+COPY mvnw  pom.xml /base2/
 COPY spring-petclinic-discovery-server/ ./
 COPY rundiscovery.sh ./
 RUN chmod u+x rundiscovery.sh
