@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jdk-alpine
-WORKDIR /base/microservice
-COPY .mvn/ /base/.mvn
-COPY mvnw  pom.xml /base/
+WORKDIR /vets-base/spring-petclinic-vets-service
+COPY .mvn/ /vets-base/.mvn
+COPY mvnw  pom.xml /vets-base/
 COPY spring-petclinic-vets-service/ ./
 COPY runmysqlprofil.sh ./
 RUN chmod u+x runmysqlprofil.sh 
