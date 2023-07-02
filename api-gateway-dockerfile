@@ -1,9 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /base/spring-petclinic-api-gateway
-EXPOSE 8080
 COPY .mvn/ /base/.mvn
 COPY mvnw  pom.xml /base/
 COPY spring-petclinic-api-gateway/ ./
-COPY runapigateway.sh ./
-RUN chmod u+x runapigateway.sh
-ENTRYPOINT ["./runapigateway.sh"]
+COPY run-without-arg.sh ./
+RUN chmod u+x run-without-arg.sh
+ENTRYPOINT ["./run-without-arg.sh"]

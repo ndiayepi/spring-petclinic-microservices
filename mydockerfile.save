@@ -1,9 +1,13 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /base/spring-petclinic-config-server
 EXPOSE 8888
-COPY .mvn /base/.mvn
-COPY mvnw pom.xml /base/
+COPY .mvn/ /tmp/base/.mvn
+COPY mvnw  pom.xml /tmp/base/
+
+COPY .mvn/ /base/.mvn
+COPY mvnw  pom.xml /base/
 COPY spring-petclinic-config-server/ ./
 COPY run.sh ./
+
 RUN chmod u+x run.sh
 ENTRYPOINT ["./run.sh"]

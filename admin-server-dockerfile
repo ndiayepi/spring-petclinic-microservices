@@ -1,9 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /base/spring-petclinic-admin-server
-EXPOSE 9090
 COPY .mvn/ /base/.mvn
 COPY mvnw  pom.xml /base/
 COPY spring-petclinic-admin-server/ ./
-COPY runadmin.sh ./
-RUN chmod u+x runadmin.sh
-ENTRYPOINT ["./runadmin.sh"]
+COPY run-without-arg.sh ./
+RUN chmod u+x run-without-arg.sh
+ENTRYPOINT ["./run-without-arg.sh"]
